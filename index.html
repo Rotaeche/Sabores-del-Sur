@@ -29,9 +29,9 @@
 
     header img {
       width: 100%;
-      height: auto; /* Se ajusta automáticamente al PNG */
-      max-height: 400px; /* Se limita la altura */
-      object-fit: contain; /* Asegura que se vea completo */
+      height: auto; 
+      max-height: 450px; /* Se aumentó ligeramente para que el logo resalte más */
+      object-fit: contain;
       background-color: var(--negro);
     }
 
@@ -40,14 +40,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 10px;
+      color: var(--blanco);
       text-align: center;
     }
 
     header .titulo h1 {
-      font-size: 2.5rem;
+      font-size: 3rem; /* Título más grande */
       margin: 0;
       text-transform: uppercase;
       font-weight: bold;
@@ -55,7 +53,7 @@
 
     header .titulo p {
       margin: 5px 0 0;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
     nav {
@@ -92,7 +90,7 @@
 
     .carrusel-contenedor {
       display: flex;
-      gap: 10px; /* Espaciado entre imágenes */
+      gap: 10px;
       transition: transform 0.5s ease-in-out;
     }
 
@@ -151,10 +149,20 @@
       cursor: pointer;
       padding: 10px;
       font-size: 1rem;
+      margin-top: 10px; /* Soluciona el problema de "flotación" */
     }
 
     form button:hover {
       background-color: #2a4730;
+    }
+
+    .ubicaciones ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .ubicaciones ul li {
+      margin: 5px 0;
     }
   </style>
 </head>
@@ -197,9 +205,9 @@
   <section id="ubicaciones">
     <h2>Ubicaciones</h2>
     <ul>
-      <li>Puerto Madryn</li>
-      <li>Trelew</li>
-      <li>Esquel</li>
+      <li>Puerto Madryn: Av. Gales 1234</li>
+      <li>Trelew: Calle 25 de Mayo 567</li>
+      <li>Esquel: Ruta Nacional 40, km 191</li>
     </ul>
   </section>
 

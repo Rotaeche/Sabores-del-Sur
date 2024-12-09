@@ -29,8 +29,10 @@
 
     header img {
       width: 100%;
-      height: 300px; /* Reducido el tamaño */
-      object-fit: cover;
+      height: auto; /* Se ajusta automáticamente al PNG */
+      max-height: 400px; /* Se limita la altura */
+      object-fit: contain; /* Asegura que se vea completo */
+      background-color: var(--negro);
     }
 
     header .titulo {
@@ -90,6 +92,7 @@
 
     .carrusel-contenedor {
       display: flex;
+      gap: 10px; /* Espaciado entre imágenes */
       transition: transform 0.5s ease-in-out;
     }
 
@@ -148,7 +151,6 @@
       cursor: pointer;
       padding: 10px;
       font-size: 1rem;
-      align-self: center;
     }
 
     form button:hover {
@@ -222,13 +224,21 @@
     let indice = 0;
 
     siguiente.addEventListener('click', () => {
-      indice = (indice + 1) % 3;
-      contenedor.style.transform = `translateX(-${indice * 100}%)`;
+      if (indice < contenedor.children.length - 1) {
+        indice++;
+      } else {
+        indice = 0;
+      }
+      contenedor.style.transform = `translateX(-${indice * (100 / contenedor.children.length)}%)`;
     });
 
     anterior.addEventListener('click', () => {
-      indice = (indice - 1 + 3) % 3;
-      contenedor.style.transform = `translateX(-${indice * 100}%)`;
+      if (indice > 0) {
+        indice--;
+      } else {
+        indice = contenedor.children.length - 1;
+      }
+      contenedor.style.transform = `translateX(-${indice * (100 / contenedor.children.length)}%)`;
     });
   </script>
 </body>

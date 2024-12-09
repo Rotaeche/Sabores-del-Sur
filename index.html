@@ -1,150 +1,169 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sabores del Sur</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        header {
-            background-color: #2c5f2d; /* Verde oscuro */
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #444; /* Gris oscuro */
-            padding: 0.5rem;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-weight: bold;
-        }
-        nav a:hover {
-            color: #2c5f2d;
-        }
-        section {
-            padding: 2rem;
-            text-align: center;
-        }
-        .hero {
-            background-image: url('sabores.png'); /* Reemplazar con una foto real */
-            background-size: cover;
-            background-position: center;
-            height: 50vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-shadow: 2px 2px 5px #000;
-        }
-        .hero h1 {
-            font-size: 3rem;
-        }
-        .section-title {
-            font-size: 2rem;
-            color: #2c5f2d;
-            margin-bottom: 1rem;
-        }
-        footer {
-            background-color: #2c5f2d;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabores del Sur</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #333;
+    }
+
+    header {
+      background-color: #2d3e3a;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #1f2c29;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .carrusel {
+      position: relative;
+      max-width: 100%;
+      overflow: hidden;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    .carrusel-contenedor {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 300%;
+    }
+
+    .carrusel img {
+      width: 100%;
+      flex: 1 0 auto;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      z-index: 10;
+    }
+
+    button.anterior {
+      left: 10px;
+    }
+
+    button.siguiente {
+      right: 10px;
+    }
+
+    footer {
+      background-color: #2d3e3a;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Sabores del Sur</h1>
-    </header>
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Sobre Nosotros</a>
-        <a href="#ubicaciones">Ubicaciones</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-    <section id="inicio" class="hero">
-        <h1>Bienvenidos a Sabores del Sur</h1>
-    </section>
-    <section id="nosotros">
-        <h2 class="section-title">Sobre Nosotros</h2>
-        <p>Sabores del Sur es una empresa dedicada a producir la mejor yerba mate, directamente desde la Patagonia argentina.</p>
-    </section>
-    <section id="ubicaciones">
-        <h2 class="section-title">Nuestras Ubicaciones</h2>
-        <ul>
-            <li>Puerto Madryn</li>
-            <li>Trelew</li>
-            <li>Esquel</li>
-        </ul>
-    </section>
+  <header>
+    <h1>Sabores del Sur</h1>
+    <p>El verdadero sabor de la yerba mate patagónica</p>
+  </header>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-nosotros">Sobre Nosotros</a>
+    <a href="#ubicaciones">Ubicaciones</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio">
+    <h2>Bienvenidos</h2>
+    <p>Explora lo mejor de nuestra yerba mate, cultivada en el corazón de la Patagonia.</p>
+
     <div class="carrusel">
-  <div class="carrusel-contenedor">
-    <img src="imagen1.jpg" alt="Imagen 1">
-    <img src="imagen2.jpg" alt="Imagen 2">
-    <img src="imagen3.jpg" alt="Imagen 3">
-  </div>
-  <button class="anterior">&#10094;</button>
-  <button class="siguiente">&#10095;</button>
-</div>
-.carrusel {
-  position: relative;
-  max-width: 100%;
-  overflow: hidden;
-  margin: auto;
-}
+      <div class="carrusel-contenedor">
+        <img src="imagen1.jpg" alt="Plantación de yerba mate">
+        <img src="imagen2.jpg" alt="Paquete de yerba mate Sabores del Sur">
+        <img src="imagen3.jpg" alt="Paisaje patagónico con mate">
+      </div>
+      <button class="anterior">&#10094;</button>
+      <button class="siguiente">&#10095;</button>
+    </div>
+  </section>
 
-.carrusel-contenedor {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 300%;
-}
+  <section id="sobre-nosotros">
+    <h2>Sobre Nosotros</h2>
+    <p>Sabores del Sur es una empresa dedicada a ofrecer la mejor yerba mate, con fábricas ubicadas en Puerto Madryn, Trelew y Esquel. Nuestro compromiso es llevar la tradición y el sabor patagónico a cada rincón del mundo.</p>
+  </section>
 
-.carrusel img {
-  width: 100%;
-  flex: 1 0 auto;
-}
+  <section id="ubicaciones">
+    <h2>Ubicaciones</h2>
+    <ul>
+      <li>Puerto Madryn</li>
+      <li>Trelew</li>
+      <li>Esquel</li>
+    </ul>
+  </section>
 
-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  z-index: 10;
-}
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Si deseas más información, escríbenos a <a href="mailto:contacto@saboresdelsur.com">contacto@saboresdelsur.com</a>.</p>
+  </section>
 
-button.anterior {
-  left: 10px;
-}
+  <footer>
+    <p>&copy; 2024 Sabores del Sur. Todos los derechos reservados.</p>
+  </footer>
 
-button.siguiente {
-  right: 10px;
-}
+  <script>
+    const contenedor = document.querySelector('.carrusel-contenedor');
+    const siguiente = document.querySelector('.siguiente');
+    const anterior = document.querySelector('.anterior');
+    let indice = 0;
 
-    <section id="contacto">
-        <h2 class="section-title">Contacto</h2>
-        <p>Email: contacto@saboresdelsur.com</p>
-        <p>Teléfono: +54 280 456 789</p>
-    </section>
-    <footer>
-        <p>&copy; 2024 Sabores del Sur. Todos los derechos reservados.</p>
-    </footer>
+    siguiente.addEventListener('click', () => {
+      if (indice < 2) {
+        indice++;
+        contenedor.style.transform = `translateX(-${indice * 100}%)`;
+      }
+    });
+
+    anterior.addEventListener('click', () => {
+      if (indice > 0) {
+        indice--;
+        contenedor.style.transform = `translateX(-${indice * 100}%)`;
+      }
+    });
+  </script>
 </body>
 </html>

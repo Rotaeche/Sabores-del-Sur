@@ -91,6 +91,53 @@
             <li>Esquel</li>
         </ul>
     </section>
+    <div class="carrusel">
+  <div class="carrusel-contenedor">
+    <img src="imagen1.jpg" alt="Imagen 1">
+    <img src="imagen2.jpg" alt="Imagen 2">
+    <img src="imagen3.jpg" alt="Imagen 3">
+  </div>
+  <button class="anterior">&#10094;</button>
+  <button class="siguiente">&#10095;</button>
+</div>
+.carrusel {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.carrusel-contenedor {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 300%;
+}
+
+.carrusel img {
+  width: 100%;
+  flex: 1 0 auto;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+button.anterior {
+  left: 10px;
+}
+
+button.siguiente {
+  right: 10px;
+}
+
     <section id="contacto">
         <h2 class="section-title">Contacto</h2>
         <p>Email: contacto@saboresdelsur.com</p>

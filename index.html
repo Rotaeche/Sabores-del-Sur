@@ -33,8 +33,8 @@
     header img {
       width: 100%;
       height: auto;
-      max-height: 450px;
-      object-fit: contain;
+      max-height: 550px; /* Imagen de cabecera más grande */
+      object-fit: cover;
     }
 
     header .titulo {
@@ -46,18 +46,18 @@
     }
 
     header .titulo h1 {
-      font-size: 3.5rem;
+      font-size: 4rem; /* Título más grande */
       margin: 0;
       font-weight: 700;
       color: var(--blanco);
       text-transform: uppercase;
-      text-shadow: 2px 2px 4px var(--negro);
+      text-shadow: 4px 4px 8px var(--negro); /* Mayor contraste */
     }
 
     header .titulo p {
-      font-size: 1.5rem;
+      font-size: 1.8rem; /* Subtítulo más destacado */
       color: var(--blanco);
-      text-shadow: 1px 1px 3px var(--negro);
+      text-shadow: 2px 2px 5px var(--negro);
       margin-top: 10px;
     }
 
@@ -95,7 +95,6 @@
 
     .carrusel-contenedor {
       display: flex;
-      gap: 10px;
       transition: transform 0.5s ease-in-out;
     }
 
@@ -262,5 +261,15 @@
   <footer>
     <p>&copy; 2024 Sabores del Sur. Todos los derechos reservados.</p>
   </footer>
+
+  <script>
+    const carrusel = document.querySelector('.carrusel-contenedor');
+    let index = 0;
+
+    setInterval(() => {
+      index = (index + 1) % 3;
+      carrusel.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  </script>
 </body>
 </html>

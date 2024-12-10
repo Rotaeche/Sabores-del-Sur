@@ -51,13 +51,13 @@
       font-weight: 700;
       color: var(--blanco);
       text-transform: uppercase;
-      text-shadow: 2px 2px 4px var(--negro); /* Contorno oscuro */
+      text-shadow: 2px 2px 4px var(--negro);
     }
 
     header .titulo p {
       font-size: 1.5rem;
       color: var(--blanco);
-      text-shadow: 1px 1px 3px var(--negro); /* Contorno oscuro */
+      text-shadow: 1px 1px 3px var(--negro);
       margin-top: 10px;
     }
 
@@ -105,24 +105,22 @@
       object-fit: cover;
     }
 
-    button {
+    .carrusel-botones {
       position: absolute;
       top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
       transform: translateY(-50%);
+    }
+
+    .carrusel-botones button {
       background-color: rgba(0, 0, 0, 0.5);
       color: var(--blanco);
       border: none;
       cursor: pointer;
       padding: 10px;
       z-index: 10;
-    }
-
-    button.anterior {
-      left: 10px;
-    }
-
-    button.siguiente {
-      right: 10px;
     }
 
     footer {
@@ -164,7 +162,7 @@
       font-size: 1rem;
       font-weight: bold;
       border-radius: 5px;
-      align-self: flex-end; /* Alineado correctamente */
+      align-self: center; /* Centrado */
     }
 
     form button:hover {
@@ -190,7 +188,13 @@
 
   <section id="inicio">
     <h2>Bienvenidos</h2>
-    <p>Explora lo mejor de nuestra yerba mate, cultivada en el corazón de la Patagonia.</p>
+    <div class="carrusel">
+      <div class="carrusel-contenedor">
+        <img src="campoyerba.jpg" alt="Imagen 1">
+        <img src="mateyerba.jpg" alt="Imagen 2">
+        <img src="empleada.jpeg" alt="Imagen 3">
+      </div>
+    </div>
   </section>
 
   <section id="contacto">
@@ -210,3 +214,4 @@
   </footer>
 </body>
 </html>
+

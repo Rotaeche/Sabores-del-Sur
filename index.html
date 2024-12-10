@@ -19,7 +19,7 @@
       position: relative;
     }
     header img {
-      height: 120px; /* Ajuste del tamaño del logo */
+      height: 140px; /* Ajuste del tamaño del logo */
     }
     header h1 {
       font-size: 2.5rem;
@@ -36,29 +36,14 @@
       width: 100%;
       max-height: 500px;
     }
-    .carrusel img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
     .carrusel-container {
       display: flex;
       transition: transform 0.5s ease;
+      width: calc(100% * 6); /* Ajuste dinámico según la cantidad de imágenes */
     }
-    .carrusel-buttons {
-      position: absolute;
-      top: 50%;
+    .carrusel-container img {
       width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-    }
-    .carrusel-buttons button {
-      background: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
+      height: auto;
     }
     .section {
       padding: 20px;
@@ -130,10 +115,6 @@
       <img src="separacion.jpg" alt="Separación de hojas">
       <img src="mates.png" alt="Varios mates">
     </div>
-    <div class="carrusel-buttons">
-      <button id="prev">❮</button>
-      <button id="next">❯</button>
-    </div>
   </section>
 
   <section class="section">
@@ -183,19 +164,12 @@
 
   <script>
     const carrusel = document.getElementById('carrusel');
-    const prev = document.getElementById('prev');
-    const next = document.getElementById('next');
     let index = 0;
 
-    prev.addEventListener('click', () => {
-      index = (index - 1 + carrusel.children.length) % carrusel.children.length;
+    setInterval(() => {
+      index = (index + 1) % 6; // Número total de imágenes
       carrusel.style.transform = `translateX(-${index * 100}%)`;
-    });
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % carrusel.children.length;
-      carrusel.style.transform = `translateX(-${index * 100}%)`;
-    });
+    }, 3000);
   </script>
 </body>
 </html>

@@ -33,7 +33,7 @@
     header img {
       width: 100%;
       height: auto;
-      max-height: 450px; /* Ajustado para ser más pequeño */
+      max-height: 350px; /* Ajustado a un tamaño más razonable */
       object-fit: cover;
     }
 
@@ -46,18 +46,18 @@
     }
 
     header .titulo h1 {
-      font-size: 3.5rem; /* Título ajustado */
+      font-size: 3rem; /* Título ajustado */
       margin: 0;
       font-weight: 700;
       color: var(--blanco);
       text-transform: uppercase;
-      text-shadow: 3px 3px 6px var(--negro);
+      text-shadow: 2px 2px 5px var(--negro);
     }
 
     header .titulo p {
-      font-size: 1.6rem; /* Subtítulo ajustado */
+      font-size: 1.4rem; /* Subtítulo ajustado */
       color: var(--blanco);
-      text-shadow: 2px 2px 4px var(--negro);
+      text-shadow: 1px 1px 3px var(--negro);
       margin-top: 10px;
     }
 
@@ -216,9 +216,9 @@
         <img src="campoyerba.jpg" alt="Imagen 1">
         <img src="mateyerba.jpg" alt="Imagen 2">
         <img src="empleada.jpeg" alt="Imagen 3">
-        <img src="imagen4.jpg" alt="Imagen 4"> <!-- Nueva imagen -->
-        <img src="imagen5.jpg" alt="Imagen 5"> <!-- Nueva imagen -->
-        <img src="imagen6.jpg" alt="Imagen 6"> <!-- Nueva imagen -->
+        <img src="imagen4.jpg" alt="Imagen 4">
+        <img src="imagen5.jpg" alt="Imagen 5">
+        <img src="imagen6.jpg" alt="Imagen 6">
       </div>
     </div>
   </section>
@@ -270,7 +270,7 @@
     let index = 0;
 
     setInterval(() => {
-      index = (index + 1) % 6; // Actualizado para 6 imágenes
+      index = (index + 1) % 6; // Ajustado para 6 imágenes
       carrusel.style.transform = `translateX(-${index * 100}%)`;
     }, 3000);
   </script>

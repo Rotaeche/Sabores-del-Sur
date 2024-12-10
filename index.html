@@ -31,7 +31,7 @@
 
     header img {
       width: auto;
-      height: 520px; /* Ajuste del tamaño del logo (30% más grande que antes) */
+      height: 520px; /* Ajuste del tamaño del logo */
       max-width: 100%;
       object-fit: cover;
     }
@@ -115,6 +115,25 @@
       width: 100%;
       height: 300px;
       object-fit: cover;
+    }
+
+    .carrusel-boton {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: var(--blanco);
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .carrusel-boton.left {
+      left: 10px;
+    }
+
+    .carrusel-boton.right {
+      right: 10px;
     }
 
     footer {
@@ -233,12 +252,14 @@
         <img src="separacion.jpg" alt="Imagen 5">
         <img src="mates.png" alt="Imagen 6">
       </div>
+      <button class="carrusel-boton left" onclick="moverCarrusel(-1)">&#10094;</button>
+      <button class="carrusel-boton right" onclick="moverCarrusel(1)">&#10095;</button>
     </div>
   </section>
 
   <section id="sobre-nosotros">
     <h2>Sobre Nosotros</h2>
-    <p>Somos una empresa profesional dedicada a la producción de yerba mate de alta calidad. Operamos en todo el país, ofreciendo ventas minoristas y mayoristas. Nuestro equipo está disponible para atenderte las 24 horas del día.</p>
+    <p>Somos una empresa profesional dedicada a la producción de yerba mate de alta calidad. Operamos en todo el país, ofreciendo ventas minoristas y mayoristas. Nuestro equipo está disponible para atenderte las 24 horas del día. Nos esforzamos por ofrecer productos frescos y naturales, cosechados con los más altos estándares de calidad, para que disfrutes de la verdadera tradición patagónica en cada sorbo.</p>
   </section>
 
   <section id="ubicaciones">
@@ -287,10 +308,10 @@
     const carrusel = document.querySelector('.carrusel-contenedor');
     let index = 0;
 
-    setInterval(() => {
-      index = (index + 1) % carrusel.children.length;
+    function moverCarrusel(direccion) {
+      index = (index + direccion + carrusel.children.length) % carrusel.children.length;
       carrusel.style.transform = `translateX(-${index * 100}%)`;
-    }, 3000);
+    }
   </script>
 </body>
 </html>

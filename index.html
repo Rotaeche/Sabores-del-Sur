@@ -4,279 +4,177 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sabores del Sur</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --verde: #4CAF50;
-      --gris-metal: #3b3b3b;
-      --negro: #121212;
-      --blanco: #ffffff;
-    }
-
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: var(--blanco);
-      color: var(--gris-metal);
+      background-color: #f5f5f5;
     }
-
     header {
+      background-color: #2c5f2d;
+      color: white;
+      text-align: center;
+      padding: 20px;
       position: relative;
-      text-align: center;
-      color: var(--blanco);
-      background-color: var(--verde);
-      padding: 20px 0;
     }
-
     header img {
-      width: auto;
-      height: 520px; /* Ajuste del tamaño del logo (30% más grande que antes) */
-      max-width: 100%;
-      object-fit: cover;
+      height: 120px; /* Ajuste del tamaño del logo */
     }
-
-    header .titulo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-
-    header .titulo h1 {
+    header h1 {
       font-size: 2.5rem;
-      margin: 0;
-      font-weight: 700;
-      color: var(--blanco);
-      text-transform: uppercase;
-      text-shadow: 2px 2px 5px var(--negro);
+      margin: 10px 0;
     }
-
-    header .titulo p {
+    header h2 {
       font-size: 1.2rem;
-      color: var(--blanco);
-      text-shadow: 1px 1px 3px var(--negro);
-      margin-top: 10px;
+      margin: 5px 0;
+      color: #e0f7fa;
     }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: var(--negro);
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: var(--blanco);
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    section {
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    #sobre-nosotros {
-      background-color: var(--verde);
-      color: var(--blanco);
-      text-align: center;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 20px;
-    }
-
-    #sobre-nosotros p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
     .carrusel {
       position: relative;
-      max-width: 100%;
       overflow: hidden;
-      margin: auto;
-      margin-bottom: 20px;
+      width: 100%;
+      max-height: 500px;
     }
-
-    .carrusel-contenedor {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
     .carrusel img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
+      height: auto;
+      display: block;
     }
-
-    footer {
-      background-color: var(--negro);
-      color: var(--blanco);
-      text-align: center;
-      padding: 10px;
-    }
-
-    .form-container {
+    .carrusel-container {
       display: flex;
-      justify-content: center;
-      padding: 40px 20px;
-      background-color: var(--gris-metal);
-      color: var(--blanco);
+      transition: transform 0.5s ease;
     }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      max-width: 600px;
+    .carrusel-buttons {
+      position: absolute;
+      top: 50%;
       width: 100%;
-    }
-
-    form input, form textarea {
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid var(--gris-metal);
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    form button {
-      background-color: var(--verde);
-      color: var(--blanco);
-      border: none;
-      cursor: pointer;
-      padding: 15px;
-      font-size: 1rem;
-      font-weight: bold;
-      border-radius: 5px;
-      align-self: center;
-    }
-
-    form button:hover {
-      background-color: #3a9b40;
-    }
-
-    #ubicaciones {
-      padding: 20px;
-      background-color: var(--gris-metal);
-      color: var(--blanco);
-      text-align: center;
-    }
-
-    .ubicaciones-container {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .carrusel-buttons button {
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+    .section {
+      padding: 20px;
+    }
+    .ubicaciones {
+      display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
       gap: 20px;
     }
-
     .ubicacion {
-      background-color: var(--verde);
-      padding: 15px;
+      text-align: center;
+      background: #e8f5e9;
+      padding: 10px;
       border-radius: 8px;
-      width: 20%;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      flex: 1 1 calc(25% - 20px);
+      max-width: 25%;
     }
-
-    .ubicacion h3 {
-      margin: 0;
-      font-size: 1.2rem;
-      color: var(--blanco);
-    }
-
-    .ubicacion p {
-      margin: 10px 0;
-    }
-
     .ubicacion a {
-      color: var(--blanco);
       text-decoration: none;
-      font-weight: bold;
+      color: #1b5e20;
     }
-
     .ubicacion a:hover {
       text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #2c5f2d;
+      color: white;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    form input,
+    form textarea {
+      margin: 5px 0;
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+    }
+    form button {
+      background-color: #2c5f2d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #1b5e20;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="Saboresdelsur.png" alt="Logo Sabores del Sur">
-    <div class="titulo">
-      <h1>Sabores del Sur</h1>
-      <p>El auténtico sabor de la Patagonia</p>
-    </div>
+    <img src="Saboresdelsur.png" alt="Logo de Sabores del Sur">
+    <h1>Sabores del Sur</h1>
+    <h2>La mejor yerba mate de la Patagonia</h2>
   </header>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#sobre-nosotros">Sobre Nosotros</a>
-    <a href="#ubicaciones">Ubicaciones</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <section id="inicio">
-    <h2>Bienvenidos</h2>
-    <div class="carrusel">
-      <div class="carrusel-contenedor">
-        <img src="campoyerba.jpg" alt="Imagen 1">
-        <img src="mateyerba.jpg" alt="Imagen 2">
-        <img src="empleada.jpeg" alt="Imagen 3">
-        <img src="bolsones.jpg" alt="Imagen 4">
-        <img src="separacion.jpg" alt="Imagen 5">
-        <img src="mates.png" alt="Imagen 6">
-      </div>
+  <section class="carrusel">
+    <div class="carrusel-container" id="carrusel">
+      <img src="campoyerba.jpg" alt="Campo de yerba">
+      <img src="mateyerba.jpg" alt="Mate con yerba">
+      <img src="empleada.jpeg" alt="Empleada trabajando">
+      <img src="bolsones.jpg" alt="Bolsones de yerba">
+      <img src="separacion.jpg" alt="Separación de hojas">
+      <img src="mates.png" alt="Varios mates">
+    </div>
+    <div class="carrusel-buttons">
+      <button id="prev">❮</button>
+      <button id="next">❯</button>
     </div>
   </section>
 
-  <section id="sobre-nosotros">
+  <section class="section">
     <h2>Sobre Nosotros</h2>
-    <p>Somos una empresa profesional dedicada a la producción de yerba mate de alta calidad. Operamos en todo el país, ofreciendo ventas minoristas y mayoristas. Nuestro equipo está disponible para atenderte las 24 horas del día.</p>
+    <p>Somos una empresa profesional dedicada a la producción y comercialización de yerba mate en Argentina. Ofrecemos venta minorista y mayorista, y estamos disponibles para consultas las 24 horas del día.</p>
   </section>
 
-  <section id="ubicaciones">
+  <section class="section">
     <h2>Ubicaciones</h2>
-    <div class="ubicaciones-container">
+    <div class="ubicaciones">
       <div class="ubicacion">
         <h3>Fábrica Principal</h3>
         <p>Trelew: Juan D. Perón y Pellegrini Norte</p>
-        <a href="https://goo.gl/maps/trelew" target="_blank">Ver en Google Maps</a>
+        <a href="https://www.google.com/maps">Ver en Maps</a>
       </div>
       <div class="ubicacion">
         <h3>Sucursal Secundaria</h3>
-        <p>Trelew: San Martín y Belgrano</p>
-        <a href="https://goo.gl/maps/trelew2" target="_blank">Ver en Google Maps</a>
+        <p>Trelew: San Martin y Belgrano</p>
+        <a href="https://www.google.com/maps">Ver en Maps</a>
       </div>
       <div class="ubicacion">
-        <h3>Sucursal Primaria</h3>
-        <p>Puerto Madryn: 9 de Julio 130</p>
-        <a href="https://goo.gl/maps/madryn" target="_blank">Ver en Google Maps</a>
+        <h3>Sucursal Puerto Madryn</h3>
+        <p>9 de Julio 130</p>
+        <a href="https://www.google.com/maps">Ver en Maps</a>
       </div>
       <div class="ubicacion">
-        <h3>Sucursal Secundaria 2</h3>
-        <p>Esquel: Av. Ameghino y Belgrano</p>
-        <a href="https://goo.gl/maps/esquel" target="_blank">Ver en Google Maps</a>
+        <h3>Sucursal Esquel</h3>
+        <p>Av. Ameghino y Belgrano</p>
+        <a href="https://www.google.com/maps">Ver en Maps</a>
       </div>
     </div>
   </section>
 
-  <section id="contacto">
+  <section class="section">
     <h2>Contacto</h2>
-    <div class="form-container">
-      <form action="mailto:contacto@saboresdelsur.com" method="post" enctype="text/plain">
-        <input type="text" name="nombre" placeholder="Tu Nombre" required>
-        <input type="email" name="email" placeholder="Tu Correo Electrónico" required>
-        <textarea name="mensaje" placeholder="Tu Mensaje" rows="5" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <textarea placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
   </section>
 
   <footer>
@@ -284,13 +182,20 @@
   </footer>
 
   <script>
-    const carrusel = document.querySelector('.carrusel-contenedor');
+    const carrusel = document.getElementById('carrusel');
+    const prev = document.getElementById('prev');
+    const next = document.getElementById('next');
     let index = 0;
 
-    setInterval(() => {
+    prev.addEventListener('click', () => {
+      index = (index - 1 + carrusel.children.length) % carrusel.children.length;
+      carrusel.style.transform = `translateX(-${index * 100}%)`;
+    });
+
+    next.addEventListener('click', () => {
       index = (index + 1) % carrusel.children.length;
       carrusel.style.transform = `translateX(-${index * 100}%)`;
-    }, 3000);
+    });
   </script>
 </body>
 </html>

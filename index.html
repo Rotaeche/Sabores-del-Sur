@@ -33,7 +33,7 @@
     header img {
       width: 100%;
       height: auto;
-      max-height: 550px; /* Imagen de cabecera más grande */
+      max-height: 450px; /* Ajustado para ser más pequeño */
       object-fit: cover;
     }
 
@@ -46,18 +46,18 @@
     }
 
     header .titulo h1 {
-      font-size: 4rem; /* Título más grande */
+      font-size: 3.5rem; /* Título ajustado */
       margin: 0;
       font-weight: 700;
       color: var(--blanco);
       text-transform: uppercase;
-      text-shadow: 4px 4px 8px var(--negro); /* Mayor contraste */
+      text-shadow: 3px 3px 6px var(--negro);
     }
 
     header .titulo p {
-      font-size: 1.8rem; /* Subtítulo más destacado */
+      font-size: 1.6rem; /* Subtítulo ajustado */
       color: var(--blanco);
-      text-shadow: 2px 2px 5px var(--negro);
+      text-shadow: 2px 2px 4px var(--negro);
       margin-top: 10px;
     }
 
@@ -216,6 +216,9 @@
         <img src="campoyerba.jpg" alt="Imagen 1">
         <img src="mateyerba.jpg" alt="Imagen 2">
         <img src="empleada.jpeg" alt="Imagen 3">
+        <img src="imagen4.jpg" alt="Imagen 4"> <!-- Nueva imagen -->
+        <img src="imagen5.jpg" alt="Imagen 5"> <!-- Nueva imagen -->
+        <img src="imagen6.jpg" alt="Imagen 6"> <!-- Nueva imagen -->
       </div>
     </div>
   </section>
@@ -267,7 +270,7 @@
     let index = 0;
 
     setInterval(() => {
-      index = (index + 1) % 3;
+      index = (index + 1) % 6; // Actualizado para 6 imágenes
       carrusel.style.transform = `translateX(-${index * 100}%)`;
     }, 3000);
   </script>
